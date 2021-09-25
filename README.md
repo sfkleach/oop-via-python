@@ -13,12 +13,12 @@ The intro I gave was:
 ## Session 01
 
 Focus: Behaviour
-The running example is the Extract Ranges example from [RosettaCode][2].
+The running example is the [Extract Ranges][3] example from [RosettaCode][2].
 
 ## Session 02
 
 Focus: Overlapping Behaviour
-We continue with the [Extract Ranges][2] running example.
+We continue with the [Extract Ranges][3] running example.
 
 ## Session 03
 
@@ -38,4 +38,5 @@ Focus: Data Encapsulation and Ownership
 * Session02 is planned for [Women's Tech Hub][1] for Wed 6th Oct 2021
 
 [1]: https://www.wthub.org/
-[2]: (https://rosettacode.org/wiki/Range_extraction)
+[2]: https://rosettacode.org/
+[3]: https://rosettacode.org/wiki/Range_extraction
