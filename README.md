@@ -32,6 +32,10 @@ Focus: Enhanced X-Ray Vision
 
 Focus: Data Encapsulation and Ownership
 
+## Session 06
+
+Focus: Organisation of Code
+
 ## History
 
 * Session01 was given at [Women's Tech Hub][1] on Wed 22nd Sept 2021
