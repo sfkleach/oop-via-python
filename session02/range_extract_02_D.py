@@ -34,7 +34,7 @@ class RangeOfPages:
 
     def strParts(self) -> Iterable[str]:
         if self.count() <= 2:
-            yield from map(str, range(self._start, self._stop))
+            yield from map(str, range(self.start(), self.stop()))
         else:
             yield f"{self.start()}-{self.finish()}"
 
