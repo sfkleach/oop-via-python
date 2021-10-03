@@ -2,8 +2,7 @@
 
 This is a short course on object oriented programming for Python programmers that is aimed at the intermediate level. The focus is on developing object-oriented thinking rather than the mechanics of how Python3 supports OOP.
 
-The intro I gave was:
-
+Initial Advert:
 > I will be running a series of about half-a-dozen, short workshops under the heading of "Using Classes in Python" in the PyLab sessions - starting tomorrow. It's aimed at people who have had a bit of experience in programming in Python and are looking for the spark that can jump the gap and brings object-oriented programming to life.
 > 
 > I wanted to run them because a theme that I hear from people is that they don't get what classes are for in Python. Sure, they've read on forums that classes are supposed to be important but that's just empty words. Maybe they have done a few exercises, know the syntax, but - pffft - what's the point?
