@@ -20,6 +20,11 @@ The running example is the [Extract Ranges][3] example from [RosettaCode][2].
 Focus: Overlapping Behaviour
 We continue with the [Extract Ranges][3] running example.
 
+## Reflection
+
+- Core vs non-core
+- Public vs private methods (behaviour vs implementation)
+
 ## Session 03
 
 Focus: X-Ray Vision
