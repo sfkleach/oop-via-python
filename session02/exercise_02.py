@@ -1,3 +1,11 @@
+
+# Exercise 02
+#   * Extend RangeOfPages to support an empty range
+#   * Hint: It should generate no strParts
+#   * Question: What is the start() of an empty range? Should it be allowed?
+#   * Stretch goal: Alter the algorithm to use the empty range
+#   * Reflect on the different approaches
+
 from typing import List, Protocol, Iterable
 
 class TryAddable(Protocol):
@@ -32,7 +40,7 @@ class RangeOfPages:
             self._stop += 1
         return is_next
 
-    def str_parts(self) -> Iterable[str]:
+    def strParts(self) -> Iterable[str]:
         if self.count() <= 2:
             yield from map(str, range(self.start(), self.stop()))
         else:
@@ -49,4 +57,4 @@ def pages_to_ranges( pages_list: List[int] ) -> List[RangeOfPages]:
     return sofar
 
 def range_extract( pages_list: List[int] ) -> List[str]:
-    return ','.join(p for r in pages_to_ranges(pages_list) for p in r.str_parts())
+    return ','.join(p for r in pages_to_ranges(pages_list) for p in r.strParts())

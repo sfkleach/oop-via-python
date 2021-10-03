@@ -20,26 +20,37 @@ The running example is the [Extract Ranges][3] example from [RosettaCode][2].
 Focus: Overlapping Behaviour
 We continue with the [Extract Ranges][3] running example.
 
-## Reflection
-
-- Core vs non-core
-- Public vs private methods (behaviour vs implementation)
-
 ## Session 03
 
-Focus: X-Ray Vision
+Focus: Object Life Cycles
+- Partial vs total method
 
 ## Session 04
 
-Focus: Enhanced X-Ray Vision
+Focus: Organisation of Code
+- Methods in Classes 
+- Core vs non-core
+- Public vs private methods (behaviour vs implementation)
 
 ## Session 05
 
-Focus: Data Encapsulation and Ownership
+Focus: X-Ray Vision
+- How to spot opportunities to identify & extract classes from code. 
 
 ## Session 06
 
-Focus: Organisation of Code
+Focus: Enhanced X-Ray Vision
+- How to transform function calls into objects and vice versa.
+
+## Session 07
+
+Focus: Data Encapsulation and Ownership
+
+## Session 08
+
+Focus: Design Patterns
+- Builder Pattern
+
 
 ## History
 
