@@ -18,7 +18,7 @@ class TryAddRefusnik:
 
 class RangeOfPages:
 
-    def __init__(self: int, start: int, length:int=1):
+    def __init__(self, start: int, length:int=1):
         self._start: int = start
         self._stop: int = start + length
  
@@ -56,5 +56,5 @@ def pages_to_ranges( pages_list: List[int] ) -> List[RangeOfPages]:
             sofar.append(rng)
     return sofar
 
-def range_extract( pages_list: List[int] ) -> List[str]:
+def range_extract( pages_list: List[int] ) -> str:
     return ','.join(p for r in pages_to_ranges(pages_list) for p in r.strParts())
