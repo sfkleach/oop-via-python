@@ -48,5 +48,5 @@ def pages_to_ranges( pages_list: List[int] ) -> List[RangeOfPages]:
             sofar.append(rng)
     return sofar
 
-def range_extract( pages_list: List[int] ) -> List[str]:
+def range_extract( pages_list: List[int] ) -> str:
     return ','.join(p for r in pages_to_ranges(pages_list) for p in r.str_parts())

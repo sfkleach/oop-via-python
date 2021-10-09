@@ -5,7 +5,7 @@ from typing import List, Protocol, Iterable
 
 class RangeOfPages:
 
-    def __init__(self: int, start: int, length:int=1):
+    def __init__(self, start: int, length:int=1):
         if length >= 1:
             self._start: int = start
             self._stop: int = start + length
