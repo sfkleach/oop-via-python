@@ -63,7 +63,7 @@ def pages_to_ranges( pages_list: List[int] ) -> List[RangeOfPages]:
             sofar.append(RangeOfPages(p))
     return sofar
 
-def range_extract( pages_list: List[int] ) -> List[str]:
+def range_extract( pages_list: List[int] ) -> str:
     return ','.join(p for r in pages_to_ranges(pages_list) for p in r.str_parts())
 
 if __name__ == '__main__':
