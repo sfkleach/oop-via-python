@@ -14,6 +14,7 @@ class Purse:
                 self._cashmap[fv] = 0
 
     def addm(self, cashmap, multiplier):           # Q: Why private?
+        """Add in a multiple of the cashmap"""
         self.ensure(cashmap.keys())
         for (fv, n) in cashmap.items():
             self._cashmap[fv] += multiplier * n
@@ -46,7 +47,7 @@ class Purse:
         """
         if not self.can_pay(amount):
             return None
-        cashmap = self.(amount, math.inf)
+        cashmap = self.generate_offer_cashmap(amount, math.inf)
         return self.split_purse(cashmap)
 
     def please_pay_exactly(self, amount):
@@ -70,24 +71,27 @@ class Purse:
 
     def generate_offer_cashmap(self, amount, best_offer_excess):
         """Returns the best offer cashmap"""
-        cash_list = self.()
+        cash_list = self.cash_list()
         available_total = self.total()
         best_offer_cashmap = None
         for (excess, cashmap) in Purse.find_offers(cash_list, available_total, amount, {}):
-            print("solution", excess, cashmap)
+            # print("solution", excess, cashmap)    # Comment back in to show the trace of solutions.
+            improvement = False
             if excess < best_offer_excess:
-                best_offer_excess = excess
-                best_offer_cashmap = cashmap
+                improvement = True
             elif excess == best_offer_excess:
-                if best_offer_cashmap or (sum(excess.values()) < sum(best_offer_cashmap.values())): 
-                    best_offer_excess = excess
-                    best_offer_cashmap = cashmap
-        return best_offer_cashmap
+                if not best_offer_cashmap: 
+                    improvement = True
+                elif sum(cashmap.values()) < sum(best_offer_cashmap.values()):
+                    improvement = True
+            if improvement:
+                best_offer_excess = excess
+                best_offer_cashmap = cashmap                
+        return best_offer_cashmap   
 
     @staticmethod
     def find_offers(available_cashlist, available_total, amount_remaining, sofar_cashmap):
         """Generator that finds solutions of the form (offer_excess, offer_cashmap)"""
-        print("here", available_cashlist, available_total, amount_remaining, sofar_cashmap)
         if amount_remaining <= 0:
             yield (-amount_remaining, sofar_cashmap)
         elif available_total == amount_remaining:
@@ -121,3 +125,11 @@ def transaction(target_amount, vendor_purse, customer_purse):
     finally:
         if offer_purse: customer_purse.pay_in(offer_purse)      # reimburse
         if change_purse: vendor_purse.pay_in(change_purse)      # reimburse            
+
+if __name__ == "__main__":
+    customer = Purse(initial_cashmap={100:8, 50:2, 20:1, 10:0, 5:3, 2:1, 1:4})
+    vendor = Purse()
+    assert transaction(601, vendor, customer)
+    assert 601 == vendor.total()
+    assert 340 == customer.total()
+    print( 'Successful transaction' )
