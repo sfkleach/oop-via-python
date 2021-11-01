@@ -110,7 +110,7 @@ def transaction(target_amount, vendor_purse, customer_purse):
         offer_purse_total = offer_purse.total()
         if offer_purse_total < target_amount:
             return False
-        change_purse = vendor_purse.please_pay_exactly(offer_amount - target_amount) or Purse()
+        change_purse = vendor_purse.please_pay_exactly(offer_purse_total - target_amount) or Purse()
         if offer_purse_total != target_amount + change_purse.total():
             return False
         vendor_purse.pay_in(offer_purse)
