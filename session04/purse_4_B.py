@@ -35,7 +35,7 @@ class Purse(Account):
     def pay_in(self, other_purse: Account):
         """Drains the coins from the other_purse into this one"""
         cash = other_purse._cashmap                 # Q: Is this OK? If not, why not?
-        other_purse = {}
+        other_purse._cashmap = {}
         self._addm(cash, 1)
 
     def _cash_list(self):

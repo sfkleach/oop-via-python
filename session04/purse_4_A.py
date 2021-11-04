@@ -8,12 +8,12 @@ class Purse:
         """
         self._cashmap = { fv:n for (fv, n) in initial_cashmap.items() if isinstance(fv, int) and isinstance(n, int) }
 
-    def ensure(self, face_values ):                # Q: Why private?
+    def ensure(self, face_values ):             
         for fv in face_values:
             if fv not in self._cashmap:
                 self._cashmap[fv] = 0
 
-    def addm(self, cashmap, multiplier):           # Q: Why private?
+    def addm(self, cashmap, multiplier):         
         """Add in a multiple of the cashmap"""
         self.ensure(cashmap.keys())
         for (fv, n) in cashmap.items():
@@ -23,13 +23,13 @@ class Purse:
         """Returns the total value of a purse"""
         return sum(fv * n for (fv, n ) in self._cashmap.items())
 
-    def can_pay(self, amount):                     # Q: Why private?
+    def can_pay(self, amount):                     
         return self.total() >= amount
 
     def pay_in(self, other_purse):
         """Drains the coins from the other_purse into this one"""
         cash = other_purse._cashmap                 # Q: Is this OK?
-        other_purse = {}
+        other_purse._cashmap = {}
         self.addm(cash, 1)
 
     def cash_list(self):
