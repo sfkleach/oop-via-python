@@ -1,6 +1,6 @@
 # Exercise for Session 04 - Reimplement Account
 
-In the file `purse_04_B.py` you will see an implementation of the class
+In the file [`purse_04_B.py`](purse_04_B.py) you will see an implementation of the class
 `Purse`, which is an implementation of the protocol `Account`. The aim
 of this exercise is to add a second implementation of `Account`, which
 might be called `Wallet`. You will note that I have marked the non-public
