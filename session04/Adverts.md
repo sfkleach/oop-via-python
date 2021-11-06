@@ -1,0 +1,7 @@
+# Advert for Session 04
+
+At this week's Workshop Wednesday hosted on Zoom, I will be running the 4th Session (!) of a series of talks on Object-Oriented Programming via Python as part of PyLab. The aim of the series is to get under the skin of what OOP is really all about. And because the previous session was necessarily cut a bit short, we'll be starting with a slightly extended recap of the previous session. So even if you haven't come before you should find it pretty easy to get into the swing of it.
+
+For the main session, we'll be looking at one of the key factors in the success of Object Oriented programming, namely how it drives code organisation. And we'll cover the concepts of public vs non-public methods and how they relate to the vision of OOP. But because we reach the parts that other would-be OOP courses cannot reach, we will also review the tricky topic of core vs non-core methods and see how that is the key to resolving design tensions in your class libraries.
+
+PLUS in the unlikely event there is time, we will review how everyone got on with the [Kessel Run](https://github.com/sfkleach/oop-via-python/blob/main/session03/kesselrun.py). Did anyone get there in under 12 parsecs or does Hans Solo still wear the crown?
