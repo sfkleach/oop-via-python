@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Exercise {
+namespace BeforeAndAfter.Afters  {
 
     public class ArticleStatus {
         public int Id { get; set; }
