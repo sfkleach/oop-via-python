@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\..\Before.cs">
+      <Link>Before.cs</Link>
+    </Compile>
+    <Compile Include="..\..\After.cs">
+      <Link>After.cs</Link>
+    </Compile>
+  </ItemGroup>
+</Project>
