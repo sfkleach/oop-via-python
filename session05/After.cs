@@ -1,25 +1,41 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+#nullable enable
 
-namespace BeforeAndAfter.Afters  {
+namespace BeforeAndAfter.After
+{
 
     public class ArticleStatus {
         public int Id { get; set; }
         public string Name { get; set; }
+        public ArticleStatus(string name)
+        {
+            Name = name;
+        }
     }
 
     public class Article {
         public bool? HiddenByReviewer { get; set; }
-        public ArticleStatus Status { get; set; }
+        public ArticleStatus Status { get; set; } = new ArticleStatus("draft");
         public long ReviewCode { get; set; }
         public string Name { get; set; }
+        public Article(string name)
+        {
+            Name = name;
+        }
     }
 
     public class UserFilter {
         public string Value { get; set; }
-        public string Logic { get; set; }
-        public string Operator { get; set; }
+        public string Logic { get; set; } = "or";
+        public string Operator { get; set; } = "contains";
+
+        public UserFilter(string value)
+        {
+            Value = value;
+        }
+
 
         public bool IsBasicFilter() {
             return Logic.Equals("or") && Operator.Equals("contains");
@@ -41,7 +57,7 @@ namespace BeforeAndAfter.Afters  {
         }
     }
     
-    public enum Tab {
+    public enum TabEnum {
         WorkInProgress,
         SubmittedForReview,
         Accepted,
@@ -49,12 +65,13 @@ namespace BeforeAndAfter.Afters  {
     }
 
     public class Column {
-        public static Column Make(Tab col) {
-            switch (col) {
-                case Tab.Accepted: return new AcceptedColumn();
-                case Tab.Completed: return new CompletedColumn();
-                default: return new Column();
-            }
+        public static Column Make(TabEnum col) {
+            return col switch
+            {
+                TabEnum.Accepted => new AcceptedColumn(),
+                TabEnum.Completed => new CompletedColumn(),
+                _ => new Column(),
+            };
         }
         public virtual IEnumerable<Article> RunColumnFilter(IEnumerable<Article> data) {
             return data;
@@ -97,8 +114,8 @@ namespace BeforeAndAfter.Afters  {
             if (user_filter == null || column == null) throw new ArgumentNullException();
             return column.RunBothFilters(dataToFilter, user_filter);
         }       
-        public static IEnumerable<Article> FilterProposals(IEnumerable<Article> dataToFilter, UserFilter user_filter, Tab col) {
-            return FilterProposals(dataToFilter, user_filter ?? new UserFilter(), Column.Make(col));
+        public static IEnumerable<Article> FilterProposals(IEnumerable<Article> dataToFilter, UserFilter? user_filter, TabEnum col) {
+            return FilterProposals(dataToFilter, user_filter ?? new UserFilter("") { Logic = "" }, Column.Make(col));
         }
     }
 }

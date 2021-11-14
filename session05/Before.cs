@@ -31,7 +31,7 @@ namespace BeforeAndAfter.Before {
 
     public class Exercise {
 
-        public IEnumerable<Article> FilterProposals(IEnumerable<Article> dataToFilter, UserFilter filter, TabEnum tab)
+        public IEnumerable<Article> FilterProposals(IEnumerable<Article> dataToFilter, UserFilter ufilter, TabEnum tab)
         {
             IEnumerable<Article> filteredData = null;
 
@@ -54,18 +54,18 @@ namespace BeforeAndAfter.Before {
                     break;
             }
 
-            if (filter != null && !string.IsNullOrEmpty(filter.Value))
+            if (ufilter != null && !string.IsNullOrEmpty(ufilter.Value))
             {
                 var tmpData = filteredData ?? dataToFilter;
 
-                if (filter.Logic.Equals("or") && filter.Operator.Equals("contains"))
+                if (ufilter.Logic.Equals("or") && ufilter.Operator.Equals("contains"))
                 {
                     switch (tab)
                     {
                         case TabEnum.Accepted:
                         case TabEnum.Completed:
-                            filteredData = tmpData.Where(t => t.Name.IndexOf(filter.Value, StringComparison.OrdinalIgnoreCase) >= 0 ||
-                            string.Format("THING#{0}", t.ReviewCode.ToString().PadLeft(10, '0')).IndexOf(filter.Value, StringComparison.OrdinalIgnoreCase) >= 0);
+                            filteredData = tmpData.Where(t => t.Name.IndexOf(ufilter.Value, StringComparison.OrdinalIgnoreCase) >= 0 ||
+                            string.Format("THING#{0}", t.ReviewCode.ToString().PadLeft(10, '0')).IndexOf(ufilter.Value, StringComparison.OrdinalIgnoreCase) >= 0);
                             break;
                         default:
                             break;
