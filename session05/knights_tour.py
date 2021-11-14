@@ -1,4 +1,10 @@
 # Taken from http://rosettacode.org/wiki/Knight%27s_tour#Python
+# (Annotated as "Knights tour using Warnsdorffs algorithm")
+
+# I have made a couple of very minor changes from the original. In particular
+# the comments are largely written by me, although I tried to preserve those
+# that were in the original submission. I also switched on the debug flag
+# in the '__main__' section.
 
 import copy
  

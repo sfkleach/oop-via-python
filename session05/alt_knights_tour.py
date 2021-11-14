@@ -1,3 +1,13 @@
+# This is the result after refactoring. The process was:
+# 1. To refactor the board object and boardsize into a class and then draw the 
+# functions into the class as methods. 
+# 2. A further refactoring of the same kind was then to merge accessible with 
+# the min-finding code.
+# 3. To restructure the knights move code as a move generator, which needs
+# us to pull in code to find the length of an iterator/iterable.
+# 4. Finally a deep refactoring step that eliminates the copying of the board,
+# which is where all the time was going.
+
 # Taken from http://rosettacode.org/wiki/Knight%27s_tour#Python
 # Annotated as "Knights tour using Warnsdorffs algorithm"
 
