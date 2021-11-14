@@ -22,7 +22,7 @@ namespace BeforeAndAfter.Before {
         public string Operator { get; set; }
     }
     
-    public enum Tab {
+    public enum TabEnum {
         WorkInProgress,
         SubmittedForReview,
         Accepted,
@@ -31,15 +31,15 @@ namespace BeforeAndAfter.Before {
 
     public class Exercise {
 
-        public IEnumerable<Article> FilterProposals(IEnumerable<Article> dataToFilter, UserFilter filter, Tab tab)
+        public IEnumerable<Article> FilterProposals(IEnumerable<Article> dataToFilter, UserFilter filter, TabEnum tab)
         {
             IEnumerable<Article> filteredData = null;
 
             switch (tab) {
-                case Tab.Accepted:
+                case TabEnum.Accepted:
                     filteredData = dataToFilter.Where(p => !p.HiddenByReviewer.HasValue || !p.HiddenByReviewer.Value);
                     break;
-                case Tab.Completed:
+                case TabEnum.Completed:
                     filteredData = (
                         dataToFilter.Where(
                             p => (
@@ -62,8 +62,8 @@ namespace BeforeAndAfter.Before {
                 {
                     switch (tab)
                     {
-                        case Tab.Accepted:
-                        case Tab.Completed:
+                        case TabEnum.Accepted:
+                        case TabEnum.Completed:
                             filteredData = tmpData.Where(t => t.Name.IndexOf(filter.Value, StringComparison.OrdinalIgnoreCase) >= 0 ||
                             string.Format("THING#{0}", t.ReviewCode.ToString().PadLeft(10, '0')).IndexOf(filter.Value, StringComparison.OrdinalIgnoreCase) >= 0);
                             break;
