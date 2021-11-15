@@ -36,7 +36,6 @@ namespace BeforeAndAfter.After
             Value = value;
         }
 
-
         public bool IsBasicFilter() {
             return Logic.Equals("or") && Operator.Equals("contains");
         }
