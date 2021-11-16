@@ -13,7 +13,7 @@ _kmoves = ((2,1), (1,2), (-1,2), (-2,1), (-2,-1), (-1,-2), (1,-2), (2,-1))
 
 def chess2index(chess, boardsize=boardsize):
     """Convert Algebraic chess notation to internal index format. Note that this
-    does not santize the inputs, so it's easy to enter values that will raise
+    does not sanitize the inputs, so it's easy to enter values that will raise
     exceptions.
     """
     chess = chess.strip().lower()
