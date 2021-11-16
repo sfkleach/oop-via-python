@@ -7,8 +7,10 @@
 1. make clean
 2. make start
 3. Open Terminal.app and Setup virtual environment with ". venv/bin/activate"
-4. Transform range_extract.py, checking using pytest test_range_extract.py
-5. Transform knights_tour.py, checking using pytest test_knights_tour.py
+4. Create a new transient branch (spike/session05?)
+5. Transform range_extract.py, checking using pytest test_range_extract.py
+6. Transform knights_tour.py, checking using pytest test_knights_tour.py
+7. Reset the branch back to master!
 
 ## Situations
 
