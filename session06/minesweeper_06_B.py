@@ -169,7 +169,6 @@ class Game:
     def mark(self, *, x, y):
         self.toggle((x,y))
 
-
 def play():
     Game().play()
 
