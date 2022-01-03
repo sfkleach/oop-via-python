@@ -49,6 +49,7 @@ Focus: Data Encapsulation and Ownership
 
 Focus: Design Patterns
 - Builder Pattern
+- State Pattern
 
 
 ## History
