@@ -43,7 +43,7 @@ Focus: Enhanced X-Ray Vision
 
 ## Session 07
 
-Focus: Data Encapsulation and Ownership
+Focus: Data Encapsulation, Ownership and Part-Of relationships
 
 ## Session 08
 
