@@ -25,7 +25,9 @@ class TreeMaker:
         self._focus = self._dump.pop()
 
     def make( self ) -> Dict[str, Any]:
-        return self._focus
+        result = self._focus
+        self._focus = {}
+        return result
 
 if __name__ == "__main__":
     m = TreeMaker()

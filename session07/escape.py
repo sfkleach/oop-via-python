@@ -5,6 +5,7 @@
 # m.make() -> Dict[str, Any]
 
 from typing import Dict, Any
+from copy import deepcopy
 
 class TreeMaker:
 
@@ -25,7 +26,7 @@ class TreeMaker:
         self._focus = self._dump.pop()
 
     def make( self ) -> Dict[str, Any]:
-        return self._focus
+        return deepcopy( self._focus )
 
 if __name__ == "__main__":
     m = TreeMaker()
