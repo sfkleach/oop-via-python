@@ -47,10 +47,13 @@ Focus: Data Encapsulation, Ownership and Part-Of relationships
 
 ## Session 08
 
+Focus: SOLID
+
+## Session 09
+
 Focus: Design Patterns
 - Builder Pattern
 - State Pattern
-
 
 ## History
 
